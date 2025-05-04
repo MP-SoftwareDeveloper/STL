@@ -35,9 +35,19 @@ void main()
 	print(templateTest);
 	array<double, arrayLength> templateTest2 = { 1.2,2.7,3.75,4.5,5.6,6.9,7,8,9 };
 	print(templateTest2);
+
+	array<char, arrayLength> templateTest3 = { 'a','b','c','d','e','f','g','h','x' };
+	print(templateTest3);
+
 	cout << endl << "----------Template end---------" << endl << endl;
 	cout << endl << "----------Try Catch---------" << endl;
 	array<int, arrayLength> x = { 10,20,40,55,61,43,71,3,0,78 };
+	auto xbegin = begin(x);
+	cout << *next(xbegin, 1) << endl;
+	auto xEnd = end(x);
+	//cout << *next(xEnd, 1) << endl;
+	cout << *prev(xEnd, 3) << endl;
+
 	x.at(2) = 30; // if 
 	try
 	{
