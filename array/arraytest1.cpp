@@ -4,6 +4,7 @@
 //////////////////////
 #include <iostream>
 #include <conio.h>
+#include <vector>
 
 using namespace std;
 //const int arrayLength = 10;
@@ -30,6 +31,20 @@ void print(T &x)
 
 void main()
 {
+	vector<int> v;
+	for (int i = 4;i <= 10;i++)
+		v.push_back(i);
+
+	cout << v.end() - v.begin();
+
+	cout << v.back() << endl;
+	cout << v.size() << endl;
+	cout << v.capacity() << endl;
+	vector<int> ::iterator itr;
+	itr = v.end();
+	
+
+	array<array<int, 3>, 2> a{ {{1,2,3},{4,5,6}} };
 	cout << endl << "----------Template---------" << endl;
 	array<int, arrayLength> templateTest = { 1,2,3,4,5,6,7,8,9 };
 	print(templateTest);
