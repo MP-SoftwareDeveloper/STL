@@ -14,17 +14,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "arraytest1.cpp",
               "DocumentMoniker": "D:\\Projects\\C\u002B\u002BSTL\\array\\arraytest1.cpp",
               "RelativeDocumentMoniker": "arraytest1.cpp",
-              "ToolTip": "D:\\Projects\\C\u002B\u002BSTL\\array\\arraytest1.cpp",
-              "RelativeToolTip": "arraytest1.cpp",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACkAAAAeAAAAAAAAAA==",
+              "ToolTip": "D:\\Projects\\C\u002B\u002BSTL\\array\\arraytest1.cpp*",
+              "RelativeToolTip": "arraytest1.cpp*",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAYwBsAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-04T17:46:49.97Z",
               "EditorCaption": ""
