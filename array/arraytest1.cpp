@@ -4,6 +4,27 @@
 #include <vector>
 
 using namespace std;
+
+// insert 
+void main()
+{
+	vector <int> v(20);
+
+	cout << "size:" << v.size() << '\n';
+	cout << "capacity: " << v.capacity() << '\n';
+
+	cout << endl << "..................resize............"<< endl;
+	v.resize(4);
+	cout << "size:" << v.capacity() << '\n';
+	cout << "capacity:" << v.capacity() << '\n';
+
+	cout << endl << "..................shrink_to_fit............"<< endl;
+	v.shrink_to_fit();
+	cout << "size:" << v.capacity() << '\n';
+	cout << "capacity:" << v.capacity() << '\n';
+}
+
+/*
 class c {
 	int x;
 
@@ -11,7 +32,7 @@ public:
 	c(int i = 0) : x(i) {} // default value for i is zero if there is no input when defining calss new member
 	int f() { return x; }
 };
-// data
+// insert
 void main()
 {
 	c m(3);
@@ -22,6 +43,7 @@ void main()
 		cout << item.f()<< endl;
 }
 
+*/
 //erase
 /* 
 void main()
