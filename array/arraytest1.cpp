@@ -4,8 +4,26 @@
 #include <vector>
 
 using namespace std;
+class c {
+	int x;
 
+public:
+	c(int i = 0) : x(i) {} // default value for i is zero if there is no input when defining calss new member
+	int f() { return x; }
+};
 // data
+void main()
+{
+	c m(3);
+
+	vector <c> v{ 1,2 };
+	v.insert(v.end(), m );
+	for (auto item : v)
+		cout << item.f()<< endl;
+}
+
+//erase
+/* 
 void main()
 {
 	vector<int> v{ 1,2,3,4,5,6,7,8 };
@@ -14,7 +32,7 @@ void main()
 	for (int i = 0; i<v.size(); i++)
 		cout << v[i] << endl;
 }
-
+*/
 /*
 // data
 void main()
