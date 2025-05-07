@@ -5,7 +5,23 @@
 
 using namespace std;
 
-// insert 
+template <typename T>
+void show(const vector<T> & v)
+{
+	for (auto i = v.rbegin(); i != v.rend() ; i++)
+		cout << *i << ' ';
+}
+// capacity,insert 
+void main()
+{
+	vector <string> v { "arash", "sara", "omid" };
+	show(v);
+	cout << endl;
+	vector <int> w{ 1,2,3,4,5,6};
+	show(w);
+}
+/*
+// capacity,insert
 void main()
 {
 	vector <int> v(20);
@@ -23,7 +39,7 @@ void main()
 	cout << "size:" << v.capacity() << '\n';
 	cout << "capacity:" << v.capacity() << '\n';
 }
-
+*/
 /*
 class c {
 	int x;
