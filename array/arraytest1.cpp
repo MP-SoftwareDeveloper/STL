@@ -5,13 +5,42 @@
 
 using namespace std;
 
+
+void main()
+{
+	vector<int> v;
+
+	istream_iterator <int> a(cin);
+
+	v.push_back(*a); // Reads first int from cin
+	a++;
+	v.push_back(*a);// Reads second int
+	a++;
+	v.push_back(*a);// Reads third int
+	// vector<int>::iterator iter
+	//Declares a variable named iter of type std::vector<int>::iterator.
+	vector <int> ::iterator iter = v.begin(); // :: scope resolution operator.
+	// enables iterator for the vector object(The line doesn’t enable or activate iterator 
+	// functionality; it simply creates an iterator object (iter) for the specific vector 
+	// v to allow you to work with its elements iteratively). it declares and initializes an 
+	// iterator that can be used to traverse or manipulate the elements of a std::vector<int> object.
+	// which is the iterator type for a std::vector<int>.
+	//The :: (scope resolution operator) accesses the iterator type defined within the std::vector<int> class.
+	while (iter != v.end())
+	{
+		cout << *iter++ << ' ';
+	}
+
+}
+
+/*
 template <typename T>
 void show(const vector<T> & v)
 {
 	for (auto i = v.rbegin(); i != v.rend() ; i++)
 		cout << *i << ' ';
 }
-// capacity,insert 
+// capacity,insert
 void main()
 {
 	vector <string> v { "arash", "sara", "omid" };
@@ -20,8 +49,9 @@ void main()
 	vector <int> w{ 1,2,3,4,5,6};
 	show(w);
 }
+*/
 /*
-// capacity,insert
+// template, vector
 void main()
 {
 	vector <int> v(20);
