@@ -2,10 +2,33 @@
 #include <iostream>
 #include <iterator>
 #include <vector>
-
 using namespace std;
 
+int mean(int *x, size_t n)
+{
+	int sum = 0;
+	size_t i;
 
+	for (i = 0; i < n; ++i)
+		sum += x[i];
+
+	return sum / n;
+}
+
+void main()
+{
+	//vector<int> v;
+	//v.push_back(5);
+	//v.push_back(6);
+	//v.push_back(3);
+
+	int a[] = { 5 , 6, 4 };
+	vector <int> v(a, a + 3);
+
+	cout << mean(&v[0], 3) << endl;
+}
+
+/* iterator
 void main()
 {
 	vector<int> v;
@@ -20,9 +43,9 @@ void main()
 	// vector<int>::iterator iter
 	//Declares a variable named iter of type std::vector<int>::iterator.
 	vector <int> ::iterator iter = v.begin(); // :: scope resolution operator.
-	// enables iterator for the vector object(The line doesn’t enable or activate iterator 
-	// functionality; it simply creates an iterator object (iter) for the specific vector 
-	// v to allow you to work with its elements iteratively). it declares and initializes an 
+	// enables iterator for the vector object(The line doesn’t enable or activate iterator
+	// functionality; it simply creates an iterator object (iter) for the specific vector
+	// v to allow you to work with its elements iteratively). it declares and initializes an
 	// iterator that can be used to traverse or manipulate the elements of a std::vector<int> object.
 	// which is the iterator type for a std::vector<int>.
 	//The :: (scope resolution operator) accesses the iterator type defined within the std::vector<int> class.
@@ -30,9 +53,8 @@ void main()
 	{
 		cout << *iter++ << ' ';
 	}
-
 }
-
+*/
 /*
 template <typename T>
 void show(const vector<T> & v)
