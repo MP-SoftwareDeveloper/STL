@@ -3,29 +3,29 @@
 #include <iterator>
 #include <vector>
 using namespace std;
-
-int mean(int *x, size_t n)
-{
-	int sum = 0;
-	size_t i;
-
-	for (i = 0; i < n; ++i)
-		sum += x[i];
-
-	return sum / n;
-}
-
+// 2 dimention vector
 void main()
 {
-	//vector<int> v;
-	//v.push_back(5);
-	//v.push_back(6);
-	//v.push_back(3);
+	vector <vector<char> > x;
 
-	int a[] = { 5 , 6, 4 };
-	vector <int> v(a, a + 3);
+	vector<char> v1{ 'a','r','a','s'};
+	vector<char> v2{ 's','a','r','a' };
 
-	cout << mean(&v[0], 3) << endl;
+	x.push_back(v1);
+	x.push_back(v2);
+
+	vector<vector<char> > ::size_type i; // ::size_type: This is a type alias provided by the vector class that 
+	//represents an unsigned integral type suitable for indexing and size operations.
+	vector <char> ::iterator p; // ::iterator:	This is a type provided by the vector<char> 
+	//class.It's used to define an iterator that can traverse or modify the vector's elements.
+	//Think of it like a pointer that can move through the elements of the vector.
+	for ( i =0; i<x.size(); i++)
+	{
+		p = x[i].begin();
+		while (p != x[i].end())
+			cout << *p++ << " ";
+		cout << endl;
+	}
 }
 
 /* iterator

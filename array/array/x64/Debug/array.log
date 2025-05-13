@@ -1,4 +1,3 @@
 ﻿  arraytest1.cpp
-D:\Projects\C++STL\array\arraytest1.cpp(15,13): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-D:\Projects\C++STL\array\arraytest1.cpp(18,6): warning C4326: return type of 'main' should be 'int' instead of 'void'
+D:\Projects\C++STL\array\arraytest1.cpp(7,6): warning C4326: return type of 'main' should be 'int' instead of 'void'
   array.vcxproj -> D:\Projects\C++STL\array\x64\Debug\array.exe
