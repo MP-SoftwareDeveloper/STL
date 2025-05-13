@@ -3,6 +3,32 @@
 #include <iterator>
 #include <vector>
 using namespace std;
+// reserve , resize
+void main()
+{
+	std::vector<int> v;
+	v.reserve(3);
+	v.push_back(8);
+
+	v.resize(5);
+	cout << v.size() << endl;
+	cout << v.capacity() << endl;
+
+	v.push_back(9);
+	cout << v.size() << endl;
+	cout << v.capacity() << endl;
+
+	v.reserve(1); // do nothing, as capacity() >1
+
+	v.resize(3); //8,0,0
+	cout << v.size() << endl;
+	cout << v.capacity() << endl;
+
+	v.resize(6,1); //8,0,0,1,1,1
+	cout << v.size() << endl;
+	cout << v.capacity() << endl;
+}
+/*
 // reserve , swap
 void main()
 {
@@ -33,6 +59,7 @@ void main()
 	cout << v.size() << endl;
 	cout << v.capacity() << endl;
 }
+*/
 /*
 // 2 dimention vector
 void main()
