@@ -16,7 +16,7 @@ void main()
 
 	vector<vector<char> > ::size_type i; // ::size_type: This is a type alias provided by the vector class that 
 	//represents an unsigned integral type suitable for indexing and size operations.
-	vector <char> ::iterator p; // ::iterator:	This is a type provided by the vector<char> 
+	vector <char> ::iterator p; // ::iterator: p is used to access each character of vectors like 'r' in 'aras'	This is a type provided by the vector<char> 
 	//class.It's used to define an iterator that can traverse or modify the vector's elements.
 	//Think of it like a pointer that can move through the elements of the vector.
 	for ( i =0; i<x.size(); i++)
