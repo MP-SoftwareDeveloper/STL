@@ -3,6 +3,37 @@
 #include <iterator>
 #include <vector>
 using namespace std;
+// reserve , swap
+void main()
+{
+	vector<string> v;
+	v.reserve(5);
+	v.push_back("Hello,");
+	v.insert(v.end(), { "how", "are" , "you" , "?" });
+	for (int i = 0; i < v.size(); i++)
+		cout << v[i] << "+++";
+	cout << endl;
+
+	cout << v.size() << endl;
+	cout << v.capacity() << endl;
+
+	swap(v[1], v[3]);
+
+	v.back() = "!";
+	for (int i = 0; i < v.size(); i++)
+		cout << v[i] << "****";
+	cout << endl;
+
+	v.pop_back();
+
+	for (int i = 0; i < v.size(); i++)
+		cout << v[i] << "   ";
+	cout << endl;
+
+	cout << v.size() << endl;
+	cout << v.capacity() << endl;
+}
+/*
 // 2 dimention vector
 void main()
 {
@@ -14,9 +45,9 @@ void main()
 	x.push_back(v1);
 	x.push_back(v2);
 
-	vector<vector<char> > ::size_type i; // ::size_type: This is a type alias provided by the vector class that 
+	vector<vector<char> > ::size_type i; // ::size_type: This is a type alias provided by the vector class that
 	//represents an unsigned integral type suitable for indexing and size operations.
-	vector <char> ::iterator p; // ::iterator: p is used to access each character of vectors like 'r' in 'aras'	This is a type provided by the vector<char> 
+	vector <char> ::iterator p; // ::iterator: p is used to access each character of vectors like 'r' in 'aras'	This is a type provided by the vector<char>
 	//class.It's used to define an iterator that can traverse or modify the vector's elements.
 	//Think of it like a pointer that can move through the elements of the vector.
 	for ( i =0; i<x.size(); i++)
@@ -28,6 +59,7 @@ void main()
 	}
 }
 
+*/
 /* iterator
 void main()
 {
