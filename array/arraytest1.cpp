@@ -1,8 +1,78 @@
 
 #include <iostream>
 #include <iterator>
-#include <vector>
+#include <deque>
 using namespace std;
+//   deque
+void main()
+{
+	deque <int> d1;
+	d1.assign(10,7);
+
+	for (int i = 0; i < d1.size(); i++)
+		cout << d1.at(i) << "   "; // cout << d[i] << "  ";
+
+	deque <int> d2{ 1,2,3,4 };
+	d2.push_back(5);
+	d2.push_front(0);
+
+	cout << endl;
+
+	deque <int> ::iterator itr;
+
+	for (itr = d2.begin(); itr != d2.end(); itr++)
+		cout << *itr << "  ";
+
+	cout << endl;
+
+	d1.insert(d1.begin(), d2.begin(), d2.end());
+	for (itr = d1.begin(); itr != d1.end(); itr++)
+		cout << *itr << "  ";
+
+	cout << endl;
+
+	d1.resize(4);
+	for (int i = 0; i < d1.size(); i++)
+		cout << d1[i] << "  ";
+
+	cout << endl;
+
+	d1.resize(10,3);
+	for (int i = 0; i < d1.size(); i++)
+		cout << d1[i] << "  ";
+
+	cout << endl;
+
+	d1.pop_front();
+	d1.pop_front();
+	for (int i = 0; i < d1.size(); i++)
+		cout << d1[i] << "  ";
+
+	cout << endl;
+
+	deque <string> d3;
+	d3.assign(4, string("Arash"));
+	deque<string> ::iterator itrs;
+	for (itrs = d3.begin(); itrs != d3.end(); itrs++)
+		cout << *itrs << "  ";
+
+	cout << endl;
+
+	d3.push_front("Sara");
+	for (itrs = d3.begin(); itrs != d3.end(); itrs++)
+		cout << *itrs << "  ";
+
+	cout << endl;
+
+	for (int i = 0; i < d3.size(); i++)
+		d3[i] = "Hello " + d3[i];
+
+	for (itrs = d3.begin(); itrs != d3.end(); itrs++)
+		cout << *itrs << "  ";
+
+	cout << endl;
+}
+/*
 // Full example
 void main()
 {
@@ -60,6 +130,7 @@ void main()
 		}
 	}
 }
+*/
 /*
 // compare
 void main()
