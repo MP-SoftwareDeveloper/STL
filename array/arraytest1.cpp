@@ -3,7 +3,7 @@
 #include <iterator>
 #include <vector>
 using namespace std;
-// 
+// Full example
 void main()
 {
 	vector<int> ss;
