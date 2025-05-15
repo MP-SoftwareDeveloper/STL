@@ -3,6 +3,64 @@
 #include <iterator>
 #include <vector>
 using namespace std;
+// 
+void main()
+{
+	vector<int> ss;
+	vector<int> ::iterator it;
+	int choice, item;
+
+	while (1)
+	{
+		cout << "\n------------------------"<< endl;
+		cout << "1.Insert " << endl;
+		cout << "2.Delete " << endl;
+		cout << "3.Size " << endl;
+		cout << "4.Display " << endl;
+		cout << "5.Clear " << endl;
+		cout << "6.Exit " << endl;
+
+		cout << "Enter your choice: ";
+		cin >> choice;
+		system("cls");
+		switch (choice)
+		{
+		case 1:
+			cout << "Enter Value: ";
+			cin >> item;
+			ss.push_back(item);
+			break;
+		case 2:
+			cout << "Delete Last Element";
+			ss.pop_back();
+			break;
+		case 3:
+			cout << "Size: ";
+			cout << ss.size() << endl;
+			break;
+		case 4:
+			cout << "Displaying: ";
+			for (it = ss.begin(); it != ss.end(); it++)
+			{
+				cout << *it << " ";
+			}
+			cout << endl;
+			break;
+		case 5:
+			ss.clear();
+			cout << "Vector is cleared" << endl;
+			break;
+		case 6:
+			exit(1);
+			break;
+
+		default:
+			cout << "Wrong Choice" << endl;
+			break;
+		}
+	}
+}
+/*
 // compare
 void main()
 {
@@ -16,7 +74,7 @@ void main()
 	v1.push_back(6);
 	v1.push_back(7);
 
-	v2.assign(5, 65);	
+	v2.assign(5, 65);
 
 	if (v1 == v2)
 		cout << "V1 and V2 are equal."<< endl;
@@ -32,6 +90,7 @@ void main()
 
 
 }
+*/
 /*
 // reserve , resize
 void main()
