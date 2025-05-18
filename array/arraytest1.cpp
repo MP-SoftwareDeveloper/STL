@@ -1,9 +1,40 @@
 
 #include <iostream>
 #include <iterator>
+#include <list>
 #include <forward_list>
 using namespace std;
+// list vs forward_list
+int main()
+{
+	list <int> x{1,2,3};
+	list<int> :: iterator itr1;
+	forward_list<int> y{4,5,6,7};
+	forward_list<int> ::iterator itr2;
+	cout << x.front() << endl;
+	cout << y.front() << endl;
 
+	cout << x.back() << endl;
+	//cout << y.back() << endl; error: this is forward_list can't use back....
+
+	cout << x.size() << endl;
+	//cout << y.size() << endl; error: this is forward_list can't use size....
+
+	x.insert(x.begin(), 13);
+	for (itr1 = x.begin(); itr1 != x.end();itr1++)
+	{
+		cout << *itr1 << " ";
+	}
+	cout << endl;
+
+	y.insert_after(y.before_begin(), 13);// no insert in forward_list use insert_after instead 
+	for (itr2 = y.begin(); itr2 != y.end();itr2++)
+	{
+		cout << *itr2 << " ";
+	}
+}
+
+/*
 template<class c>
 c f(const c& z)
 {
@@ -32,6 +63,7 @@ int main()
 
 	return 0;
 }
+*/
 
 /*
 //List remove_if()
