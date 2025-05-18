@@ -3,6 +3,82 @@
 #include <iterator>
 #include <deque>
 using namespace std;
+//   deque example
+void main()
+{
+	deque<int> deq;
+	deque<int> ::iterator it;
+	int k, a;
+
+	while (1)
+	{
+		cout << "\n*****************************************\n" << endl;
+
+		cout << "1.Insert at the End." << endl;
+		cout << "2.Insert at the front." << endl;
+		cout << "3.Delete of End." << endl;
+		cout << "4.Delete of front." << endl;
+		cout << "5.Front" << endl;
+		cout << "6.Last" << endl;
+		cout << "7.Size" << endl;
+		cout << "8.Display" << endl;
+		cout << "9.Exit" << endl;
+
+		cout << "Enter your Choice: ";
+		cin >> k;
+		system("cls");
+
+		switch (k)
+		{
+		case 1:
+			cout << "Enter a value: ";
+			cin >> a;
+			deq.push_back(a);
+			break;
+		case 2:
+			cout << "Enter a value: ";
+			cin >> a;
+			deq.push_front(a);
+			break;
+		case 3:
+			a = deq.back();
+			deq.pop_back();
+			break;
+		case 4:
+			a = deq.front();
+			deq.pop_front();
+			break;
+		case 5:
+			cout << "Front: ";
+			cout << deq.front() << endl;
+			break;
+		case 6: 
+			cout << "Back: ";
+			cout << deq.back() << endl;
+			break;
+		case 7:
+			cout << "Size: " << deq.size() << endl;
+			break;
+		case 8:
+			cout << "Elements of Deque: ";
+			for (it = deq.begin(); it != deq.end(); it++)
+				cout << *it << "  ";
+			cout << endl;
+			break;
+		case 9: 
+			exit(1);
+			break;
+		default:
+			cout << "Please enter a valid value!!!";
+			break;
+
+		}
+	}
+
+
+
+}
+/*
 //   deque
 void main()
 {
@@ -72,6 +148,7 @@ void main()
 
 	cout << endl;
 }
+*/
 /*
 // Full example
 void main()
@@ -333,7 +410,7 @@ void main()
 
 */
 //erase
-/* 
+/*
 void main()
 {
 	vector<int> v{ 1,2,3,4,5,6,7,8 };
