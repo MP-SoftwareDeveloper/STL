@@ -1,8 +1,65 @@
 
 #include <iostream>
 #include <iterator>
-#include <deque>
+#include <forward_list>
 using namespace std;
+
+//List remove_if()
+bool f(const int& value)
+{
+	return (value>10);
+}
+
+int main()
+{
+	forward_list<int> x{ 2,44,152,7,82,9 };
+
+	
+
+	forward_list<int> ::iterator it;
+	for (it = x.begin();it != x.end(); ++it)
+		cout << *it << ' ';
+
+	cout << endl;
+    x.remove_if(f);
+	for (it = x.begin();it != x.end(); ++it)
+		cout << *it << ' ';
+
+	return 0;
+}
+/*
+//erase_after, front
+void main()
+{
+	forward_list<int> x;
+	x.assign({ 3,6,1,8,2 });
+
+	forward_list<int> ::iterator itr, p;
+
+	cout << x.front();
+	cout << endl;
+
+	for (itr = x.begin(); itr != x.end(); itr++)
+		cout << *itr << "  ";
+
+	cout << endl;
+	x.sort();
+	x.push_front(37);
+	for (itr = x.begin(); itr != x.end(); itr++)
+	{
+		cout << *itr << "  ";
+		if (*itr == 3)
+			p = itr;
+	}
+	cout << endl;
+	x.erase_after(p, x.end());
+	for (itr = x.begin(); itr != x.end(); itr++)
+		cout << *itr << "  ";
+}
+*/
+
+/*
+
 //   deque example
 void main()
 {
@@ -52,7 +109,7 @@ void main()
 			cout << "Front: ";
 			cout << deq.front() << endl;
 			break;
-		case 6: 
+		case 6:
 			cout << "Back: ";
 			cout << deq.back() << endl;
 			break;
@@ -65,7 +122,7 @@ void main()
 				cout << *it << "  ";
 			cout << endl;
 			break;
-		case 9: 
+		case 9:
 			exit(1);
 			break;
 		default:
@@ -78,6 +135,7 @@ void main()
 
 
 }
+*/
 /*
 //   deque
 void main()
