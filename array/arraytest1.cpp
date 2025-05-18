@@ -4,6 +4,36 @@
 #include <forward_list>
 using namespace std;
 
+template<class c>
+c f(const c& z)
+{
+	c t;
+	t = z;
+
+	for (auto& item : t)
+		item++;
+
+	return t;
+}
+
+int main()
+{
+	forward_list<int> x{ 10,23,37 };
+	forward_list<int> y;
+
+	y = f(x);
+
+	for (int& item : x)
+		cout << item << ' ';
+	cout << endl;
+
+	for (int& item : y)
+		cout << item << ' ';
+
+	return 0;
+}
+
+/*
 //List remove_if()
 bool f(const int& value)
 {
@@ -27,6 +57,8 @@ int main()
 
 	return 0;
 }
+*/
+
 /*
 //erase_after, front
 void main()
