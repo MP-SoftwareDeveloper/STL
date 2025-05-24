@@ -1,10 +1,50 @@
 
 #include <iostream>
 #include <iterator>
-#include <set>
+#include <map>
 using namespace std;
 
 void main()
+{
+	map <char, int> m{ {'x',12}, {'b',6},{'m',12}, {'d',18},{'d',18} };
+	map<char, int> ::iterator it, f;
+
+	for (it = m.begin(); it != m.end();it++)
+		cout << it-> first << " : " << it->second << " , ";
+	cout << endl;
+
+
+	m.insert(pair<char,int> ('c',6));
+
+	pair<map<char, int>::iterator, bool> k;
+	k = m.insert(pair<char, int>('b', 67));
+	if (k.second == true)
+		cout << "Okay" << endl;
+
+	if (k.second == false)
+	{ 
+		cout << "Already exist" << endl;
+		cout << k.first->first <<" : " << k.first->second << endl;
+	}
+		
+
+	for (it = m.begin(); it != m.end();it++)
+		cout << it->first << " : " << it->second << " , ";
+	cout << endl;
+
+	m.erase('m');
+
+	for (it = m.begin(); it != m.end();it++)
+		cout << it->first << " : " << it->second << " , ";
+	cout << endl;
+	cout << "**********************";
+	cout << endl;
+	f = m.find('c');
+	cout << f->second;
+
+}
+/*
+	void main()
 {
 	set <int> s { 2,4,5,6,8,9,0,3,15,90,5,8 };
 
@@ -22,7 +62,7 @@ void main()
 	for (it = s.begin(); it != s.end();it++)
 		cout << *it << endl;
 }
-
+*/
 /*
 class Point
 {
