@@ -4,25 +4,48 @@
 #include <queue>
 using namespace std;
 
+class Point
+{
+	int x;
+	int y;
+public:
+	Point(int a, int b)
+	{
+		x = a;
+		y = b;
+	}
+	int getX() const { return x; }
+	int getY() const { return y; }
+};
+class c
+{
+public:
+	int operator() (const Point& p1, const Point& p2)
+	{
+		return p1.getX() < p2.getX();
+	}
+};
 //priority_queue
 void main()
 {
-	priority_queue<int> pq;
+	priority_queue <Point, vector<Point>, c > pq;
+	/*
+	T: The type of elements stored in the priority queue.
+	Container: The underlying container used to store the elements (default is vector<T>).
+	Compare: The comparison function or class used to determine the priority of elements (default is less<T>, which creates a max-heap).
+	*/
 
-	pq.push(6);
-	pq.push(8);
-	pq.push(9);
-	pq.push(75);
-	pq.push(3);
+	pq.push(Point(3, 10));
+	pq.push(Point(4, 20));
+	pq.push(Point(1, 30));
+	pq.push(Point(5, 40));
+	pq.push(Point(2, 50));
+	pq.push(Point(4, 60));
 
-	cout << pq.top() << endl;// this will pop the highest priority 
-
-	pq.pop();
-	cout << pq.top() << endl;
-	pq.pop();
 	while (!pq.empty())
 	{
-		cout << pq.top() << endl;
+		Point t = pq.top();
+		cout << t.getX() << " , " << t.getY() << endl;
 		pq.pop();
 	}
 }
