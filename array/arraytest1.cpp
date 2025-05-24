@@ -1,9 +1,35 @@
 
 #include <iostream>
 #include <iterator>
-#include <queue>
+#include <stack>
 using namespace std;
 
+//Stack = queue FILO
+void main()
+{
+	// in stack no iterator can be defined
+	stack<int> s, temp, s2;
+	s.push(7 );
+	s.push(5);
+	s.push(8);
+	s.pop(); 
+	s.push(9);
+
+	cout << s.size()<< endl;
+	cout << s.top() << endl; // in stack there are no front and end;
+	//cout << s.back() << endl;
+
+	temp = s;
+	while (!temp.empty())
+	{
+		cout << temp.top()<< " ";
+		temp.pop();
+	}
+	s.swap(s2);
+
+}
+
+/*
 //Queue FIFO
 void main()
 {
@@ -28,7 +54,7 @@ void main()
 	q.swap(q2);
 
 }
-
+*/
 /*
 // list
 template <typename T>
