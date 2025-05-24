@@ -1,9 +1,102 @@
 
 #include <iostream>
 #include <iterator>
-#include <list>
-#include <forward_list>
+#include <queue>
 using namespace std;
+
+//Queue FIFO
+void main()
+{
+	// in queue no iterator can be defined
+	queue<int> q, temp, q2;
+	q.push(3);
+	q.push(5);
+	q.push(8);
+	q.pop();
+	q.push(9);
+
+	cout << q.size()<< endl;
+	cout << q.front() << endl;
+	cout << q.back() << endl;
+
+	temp = q;
+	while (!temp.empty())
+	{
+		cout << temp.front()<< " ";
+		temp.pop();
+	}
+	q.swap(q2);
+
+}
+
+/*
+// list
+template <typename T>
+void printList( const list< T > &r)
+{
+	if (r.empty())
+		cout << "List is empty";
+	else
+	{
+		ostream_iterator<T> k(cout, " ");
+		copy(r.begin(), r.end(), k);
+	}
+	cout << endl;
+}
+
+int main()
+{
+	list<int> x;
+	list<int> k;
+
+	x.push_front(1);
+	x.push_front(2);
+	x.push_back(3);
+	x.push_back(4);
+
+	printList(x);
+	cout << "******************1***********" << endl;
+	x.sort();
+	printList(x);
+	cout << "******************2***********" << endl;
+	int a[4] = { 2,6,4,8 };
+	k.insert(k.begin(), a, a + 4);
+	printList(k);
+	cout << "******************3***********" << endl;
+	x.splice(x.end(), k);
+	printList(x);
+	printList(k);
+	cout << "******************4***********" << endl;
+	x.sort();
+	printList(x);
+	cout << "******************5***********" << endl;
+	k.insert(k.begin(),a,a+4);
+	k.sort();
+
+	printList(k);
+	cout << "******************6***********" << endl;
+	x.merge(k);
+	printList(x);
+	printList(k);
+	cout << "******************7***********" << endl;
+	x.pop_front();
+	x.pop_back();
+	printList(x);
+	cout << "******************8***********" << endl;
+	x.unique();
+	printList(x);
+	cout << "******************9***********" << endl;
+	x.swap(k);
+	printList(x);
+	printList(k);
+	cout << "*****************10***********" << endl;
+	x.remove(4);
+	printList(x);
+	cout << "******************11***********" << endl;
+}
+*/
+
+/*
 // list vs forward_list
 int main()
 {
@@ -27,13 +120,14 @@ int main()
 	}
 	cout << endl;
 
-	y.insert_after(y.before_begin(), 13);// no insert in forward_list use insert_after instead 
+	y.insert_after(y.before_begin(), 13);// no insert in forward_list use insert_after instead
 	for (itr2 = y.begin(); itr2 != y.end();itr2++)
 	{
 		cout << *itr2 << " ";
 	}
 }
 
+*/
 /*
 template<class c>
 c f(const c& z)
