@@ -1,32 +1,30 @@
 
 #include <iostream>
 #include <iterator>
-#include <stack>
+#include <queue>
 using namespace std;
 
-//Stack = queue FILO
+//priority_queue
 void main()
 {
-	// in stack no iterator can be defined
-	stack<int> s, temp, s2;
-	s.push(7 );
-	s.push(5);
-	s.push(8);
-	s.pop(); 
-	s.push(9);
+	priority_queue<int> pq;
 
-	cout << s.size()<< endl;
-	cout << s.top() << endl; // in stack there are no front and end;
-	//cout << s.back() << endl;
+	pq.push(6);
+	pq.push(8);
+	pq.push(9);
+	pq.push(75);
+	pq.push(3);
 
-	temp = s;
-	while (!temp.empty())
+	cout << pq.top() << endl;// this will pop the highest priority 
+
+	pq.pop();
+	cout << pq.top() << endl;
+	pq.pop();
+	while (!pq.empty())
 	{
-		cout << temp.top()<< " ";
-		temp.pop();
+		cout << pq.top() << endl;
+		pq.pop();
 	}
-	s.swap(s2);
-
 }
 
 /*
