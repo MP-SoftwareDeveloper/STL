@@ -1,9 +1,29 @@
 
 #include <iostream>
 #include <iterator>
-#include <queue>
+#include <set>
 using namespace std;
 
+void main()
+{
+	set <int> s { 2,4,5,6,8,9,0,3,15,90,5,8 };
+
+	s.insert(7);
+
+	set<int> ::iterator it;
+	for (it = s.begin(); it != s.end();it++)
+		cout << *it << " ";
+	 
+	cout << endl;
+	s.erase(5);
+	it = s.find(6);
+	s.erase(it,s.end());
+
+	for (it = s.begin(); it != s.end();it++)
+		cout << *it << endl;
+}
+
+/*
 class Point
 {
 	int x;
@@ -29,26 +49,27 @@ public:
 void main()
 {
 	priority_queue <Point, vector<Point>, c > pq;
-	/*
-	T: The type of elements stored in the priority queue.
-	Container: The underlying container used to store the elements (default is vector<T>).
-	Compare: The comparison function or class used to determine the priority of elements (default is less<T>, which creates a max-heap).
-	*/
+	
+	//T: The type of elements stored in the priority queue.
+	//Container: The underlying container used to store the elements (default is vector<T>).
+	//Compare: The comparison function or class used to determine the priority of elements (default is less<T>, which creates a max-heap).
+	
 
-	pq.push(Point(3, 10));
-	pq.push(Point(4, 20));
-	pq.push(Point(1, 30));
-	pq.push(Point(5, 40));
-	pq.push(Point(2, 50));
-	pq.push(Point(4, 60));
+pq.push(Point(3, 10));
+pq.push(Point(4, 20));
+pq.push(Point(1, 30));
+pq.push(Point(5, 40));
+pq.push(Point(2, 50));
+pq.push(Point(4, 60));
 
-	while (!pq.empty())
-	{
-		Point t = pq.top();
-		cout << t.getX() << " , " << t.getY() << endl;
-		pq.pop();
-	}
+while (!pq.empty())
+{
+	Point t = pq.top();
+	cout << t.getX() << " , " << t.getY() << endl;
+	pq.pop();
 }
+}
+*/
 
 /*
 //Queue FIFO
