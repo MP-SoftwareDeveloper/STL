@@ -1,10 +1,29 @@
 
 #include <iostream>
-#include <iterator>
-#include <map>
+#include <iomanip>//Enables formatted I/O (like setting width with setw).
+#include <map> //Provides access to map and multimap container classes.
 using namespace std;
 
 void main()
+{
+	multimap<string, string> dict; // A multimap is used here because a word can have multiple meanings.
+
+	dict.insert(
+		{
+			{"day","Tag"},{"car","Auto"},{"trait","Merkmal"},{"strange","fremd"},{"smart","elegant"},
+			{"smart","raffiniert"},{"smart","klug"},{"clever","raffiniert"},{"strange","seltsam"}
+		}
+	);
+
+	cout.setf(ios::left);// Sets the output alignment to left-justified for formatted printing.
+	cout << setw(10) << "English " << "German " << endl;// Prints column headers with fixed width using setw(10).
+	for (const auto& elem : dict)
+		cout << setw(10) << elem.first << elem.second << endl;// setw(10) ensures the English word takes up 10 characters of space, keeping columns aligned.
+
+	cout << endl;
+}
+/*
+	void main()
 {
 	map <char, int> m{ {'x',12}, {'b',6},{'m',12}, {'d',18},{'d',18} };
 	map<char, int> ::iterator it, f;
@@ -43,6 +62,7 @@ void main()
 	cout << f->second;
 
 }
+*/
 /*
 	void main()
 {
