@@ -1,9 +1,35 @@
 
 #include <iostream>
-#include <iomanip>//Enables formatted I/O (like setting width with setw).
-#include <map> //Provides access to map and multimap container classes.
+
 using namespace std;
 
+// lambda
+void main()
+{
+	auto f1 = [](int a) { cout << a << endl;};
+	f1(2);
+
+	int b = 3;
+	auto f2 = [b]() {cout << b << endl; };
+	b++;
+	f2();
+
+	auto f22 = [&b]() {cout << b << endl; };
+	b++;
+	f22();
+
+	int c = 8;
+	auto f3 = [c] (int d) {cout << c+d << endl; };
+	f3(3);
+
+	int s = 0;
+	for (int i = 1;i <= 3;i++)
+		[&s](int x) {s = s + x;}(i);
+
+	cout << s;
+
+}
+/*
 void main()
 {
 	multimap<string, string> dict; // A multimap is used here because a word can have multiple meanings.
@@ -22,6 +48,7 @@ void main()
 
 	cout << endl;
 }
+*/
 /*
 	void main()
 {
