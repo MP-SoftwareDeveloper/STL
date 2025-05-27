@@ -7,6 +7,18 @@ using namespace std;
 // for_each
 void main()
 {
+	vector<int> v{ 1,2,3,4,5 };
+
+	int sum = 0;
+	auto f = [&sum](int x) {sum = sum + x;};
+
+	for_each(v.begin(),v.end(),f);
+
+	cout << sum;
+}
+/*
+void main()
+{
 	vector<int> v{ 1,2,4,7,8,10,15,20 };
 	int d = 3;
 	auto f = [d](int x) {if (x % d == 0) cout << x << endl;};
@@ -14,6 +26,7 @@ void main()
 	for_each(v.begin(), v.end(), f);
 
 }
+*/
 /*
 // lambda
 void main()
