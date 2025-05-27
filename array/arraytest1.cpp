@@ -1,8 +1,20 @@
 
 #include <iostream>
-
+#include <vector>
+#include <algorithm>
 using namespace std;
 
+// for_each
+void main()
+{
+	vector<int> v{ 1,2,4,7,8,10,15,20 };
+	int d = 3;
+	auto f = [d](int x) {if (x % d == 0) cout << x << endl;};
+
+	for_each(v.begin(), v.end(), f);
+
+}
+/*
 // lambda
 void main()
 {
@@ -29,6 +41,7 @@ void main()
 	cout << s;
 
 }
+*/
 /*
 void main()
 {
